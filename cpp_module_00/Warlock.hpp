@@ -6,7 +6,7 @@
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 12:12:15 by sameye            #+#    #+#             */
-/*   Updated: 2022/05/23 14:53:54 by sameye           ###   ########.fr       */
+/*   Updated: 2022/05/20 12:58:34 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,6 @@
 
 #include <string>
 #include <iostream>
-#include <map>
-
-#include "ASpell.hpp"
-#include "ATarget.hpp"
 
 class Warlock
 {
@@ -37,17 +33,9 @@ class Warlock
 	void setTitle (const std::string &str);
 	void introduce(void) const;
 
-	void learnSpell(const ASpell *src);
-	void forgetSpell(std::string name);
-	void launchSpell(const std::string spellname, const ATarget &target);
-
 	private:
 	std::string name;
 	std::string title;
-
-	private:
-	std::map<std::string, ASpell*> store;
-	
 };
 
 #endif

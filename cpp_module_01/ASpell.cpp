@@ -6,23 +6,27 @@
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 12:12:12 by sameye            #+#    #+#             */
-/*   Updated: 2022/05/20 16:54:16 by sameye           ###   ########.fr       */
+/*   Updated: 2022/05/23 15:14:00 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ASpell.hpp"
 
 	ASpell::ASpell(void) {}
-	ASpell::ASpell(const ASpell &src) : name(src.name), effects(src.effects) {}
+	ASpell::ASpell(const ASpell &src) { *this = src; }
 	ASpell::~ASpell (void) {}
-	
-	ASpell &operator= (const ASpell &src)
+	ASpell &ASpell::operator= (const ASpell &src)
 	{
 		this->name = src.name;
 		this->effects = src.effects;
+		return *this;
 	}
 
-	ASpell::ASpell(const std::string &str_name, const std::string &str_effects) : name(str_name), effects(str_effects) {}
+	ASpell::ASpell(const std::string &str_name, const std::string &str_effects)
+	{
+		name = str_name;
+		effects = str_effects;
+	}
 
 	const std::string &ASpell::getName (void) const
 	{

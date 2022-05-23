@@ -6,7 +6,7 @@
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 13:35:40 by sameye            #+#    #+#             */
-/*   Updated: 2022/05/20 17:15:28 by sameye           ###   ########.fr       */
+/*   Updated: 2022/05/23 14:46:55 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include <string>
 #include <iostream>
 #include "ASpell.hpp"
+
+class ASpell;
 
 class ATarget
 {
@@ -37,8 +39,5 @@ class ATarget
 
 	protected:
 	std::string type;
-
-
 };
-
 #endif

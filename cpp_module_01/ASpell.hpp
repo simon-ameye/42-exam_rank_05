@@ -6,22 +6,25 @@
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 13:35:40 by sameye            #+#    #+#             */
-/*   Updated: 2022/05/20 17:06:54 by sameye           ###   ########.fr       */
+/*   Updated: 2022/05/23 15:16:50 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ASPELL_H
 #define ASPELL_H
 
-#include <string>
 #include <iostream>
+
+#include "ATarget.hpp"
+
+class ATarget;
 
 class ASpell
 {
 	public:
 	ASpell (void);
 	ASpell (const ASpell &src);
-	~ASpell (void);
+	virtual ~ASpell (void);
 	ASpell &operator= (const ASpell &src);
 
 	public:
@@ -33,7 +36,7 @@ class ASpell
 	public:
 	const std::string &getName (void) const;
 	const std::string &getEffects (void) const;
-	void launch (const ATarget &src);
+	void launch (const ATarget &src) const;
 
 	protected:
 	std::string name;
