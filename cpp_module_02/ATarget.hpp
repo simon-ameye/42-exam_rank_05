@@ -1,47 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ASpell.hpp                                         :+:      :+:    :+:   */
+/*   ATarget.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 13:35:40 by sameye            #+#    #+#             */
-/*   Updated: 2022/05/23 19:06:56 by sameye           ###   ########.fr       */
+/*   Updated: 2022/05/24 12:16:08 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ASPELL_H
-#define ASPELL_H
+#ifndef ATARGET_H
+#define ATARGET_H
 
+#include <string>
 #include <iostream>
+#include "ASpell.hpp"
 
-#include "ATarget.hpp"
+class ASpell;
 
-class ATarget;
-
-class ASpell
+class ATarget
 {
 	public:
-	ASpell (void);
-	ASpell (const ASpell &src);
-	virtual ~ASpell (void);
-	ASpell &operator= (const ASpell &src);
+	ATarget (void);
+	ATarget (const ATarget &src);
+	virtual ~ATarget (void);
+	ATarget &operator= (const ATarget &src);
 
 	public:
-	ASpell (const std::string &str_name, const std::string &str_effects);
+	ATarget (const std::string &str_type);
 
 	public:
-	virtual ASpell *clone (void) const = 0;
+	virtual ATarget *clone (void) const = 0;
 
 	public:
-	const std::string &getName (void) const;
-	const std::string &getEffects (void) const;
-	void launch (const ATarget &src) const;
+	const std::string &getType (void) const;
+	void getHitBySpell (const ASpell &src) const;
 
 	protected:
-	std::string name;
-	std::string effects;
-
+	std::string type;
 };
-
 #endif
