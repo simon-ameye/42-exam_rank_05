@@ -6,7 +6,7 @@
 /*   By: sameye <sameye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 13:35:40 by sameye            #+#    #+#             */
-/*   Updated: 2022/05/23 14:46:55 by sameye           ###   ########.fr       */
+/*   Updated: 2022/06/09 13:40:32 by sameye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class ATarget
 	public:
 	ATarget (void);
 	ATarget (const ATarget &src);
-	~ATarget (void);
+	virtual ~ATarget (void);
 	ATarget &operator= (const ATarget &src);
 
 	public:
