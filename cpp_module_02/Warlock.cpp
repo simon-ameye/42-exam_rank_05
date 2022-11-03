@@ -74,6 +74,7 @@
 	{
 		//if (store.count(spellname))
 		//	store[spellname]->launch(target);
-		book.createSpell(spellname)->launch(target);
+		if (book.createSpell(spellname))
+			book.createSpell(spellname)->launch(target);
 	}
 	
